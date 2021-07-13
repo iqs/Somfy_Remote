@@ -11,7 +11,7 @@
     - Choose a starting point for the rolling code. Any unsigned int works, 1 is a good start
     - Upload the sketch
     - Long-press the program button of YOUR ACTUAL REMOTE until your blind goes up and down slightly
-    - send 'p' to the serial terminal oder via 'MQTT'
+    - send 'p' via 'MQTT'
    To make a group command, just repeat the last two steps with another blind (one by one)
   
    Then:
