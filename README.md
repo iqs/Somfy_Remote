@@ -1,8 +1,38 @@
 ![Image of the licence](https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png)
 
 # Somfy Remote
-An Arduino Sketch able to emulate a Somfy remote control.
+   This sketch allows you to emulate a Somfy RTS or Simu HZ remote.
 
+   This is a fork of MakerMeik's project, to add functionality to control multiple (up to 20) blinds. 
+   (https://github.com/MakerMeik/Somfy_Remote)
+   
+   MakerMeik's code was forked from the original sketch written by Nickduino (https://github.com/Nickduino)
+    
+   If you want to learn more about the Somfy RTS protocol, check out https://pushstack.wordpress.com/somfy-rts-protocol/
+   
+   The rolling code will be stored in EEPROM, so that you can power the D1 Mini.
+   
+   Easiest way to make it work for you:
+    - Choose a remote number
+    - Choose a starting point for the rolling code. Any unsigned int works, 1 is a good start
+    - Upload the sketch
+    - Long-press the program button of YOUR ACTUAL REMOTE until your blind goes up and down slightly
+    - send 'p' via 'MQTT'
+   To make a group command, just repeat the last two steps with another blind (one by one)
+
+   Send a message to the channel number corresponding to the blind you want to program / control. 
+
+   e.g. "Somfy-1"
+
+   From the command line, this is:
+   mosquitto_pub -h <mqtt server IP address> -m "u" -t "Somfy-1"
+   
+   Then:
+    - u will make it to go up
+    - s make it stop
+    - d will make it to go down
+    - p sets the program mode
+    - you can also send a HEX number directly for any weird command you (0x9 for the sun and wind detector for instance)
 
 If you want to learn more about the Somfy RTS protocol, check out [Pushtack](https://pushstack.wordpress.com/somfy-rts-protocol/).
 
