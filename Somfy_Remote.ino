@@ -40,13 +40,13 @@ WiFiClient espClient;
 PubSubClient client(espClient);
 
 String header;
-const char* ssid = "";   // <-- Enter your Wifi-SSID
-const char* password = "";  // <-- Enter your Wifi-Password
+const char* ssid = "xxxxxxxx";   // <-- Enter your Wifi-SSID
+const char* password = "xxxxxxxx";  // <-- Enter your Wifi-Password
 
-const char* mqtt_server = "192.168.68.126";  // <-- Enter the IP of your MQTT-Server
+const char* mqtt_server = "192.168.xx.xx";  // <-- Enter the IP of your MQTT-Server
 const unsigned int mqtt_port = 1883; 
-const char* mqtt_user =   ""; 
-const char* mqtt_pass =   ""; // <-- Enter the Password of your MQTT-Server
+const char* mqtt_user =   "xxxxxxxx"; 
+const char* mqtt_pass =   "xxxxxxxx"; // <-- Enter the Password of your MQTT-Server
 String clientId = "Somfy";
 
 String mqtt_channel = "Somfy-";
@@ -64,7 +64,7 @@ int remote[20] = {0x121313,0x121314,0x121315,0x121316,0x121317,
 
 char demand[20] = {'w','w','w','w','w','w','w','w','w','w','w','w','w','w','w','w','w','w','w','w'} ; // w = waiting
 
-const int transmitPin = 5;
+const int transmitPin = 1;  // TX pin
 
 unsigned long rollingCode[20] = {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1};
 
